@@ -1,0 +1,4 @@
+Teknisk:
+- Finne hvilken algoritme vi skal bruke
+- Finne en måte å 'score' panelene på
+- Implementere dette hos smartpanel
