@@ -6,8 +6,8 @@ def to_hsl(img):
 
 #isolerer hvit fra HSL
 def isolate_white_hsl(img):
-    low = np.array([0,200,0], dtype=np.uint8)
-    high = np.array([190,255,255], dtype=np.uint8)
+    low = np.array([0,0,0], dtype=np.uint8)
+    high = np.array([0,255,255], dtype=np.uint8)
 
     white_mask = cv2.inRange(img, low, high)
 
@@ -25,7 +25,7 @@ def filter_img(img):
 
     return merge_white_original(img, hsl_white)
 
-image = cv2.imread("img.jpg")
+image = cv2.imread("img.bmp")
 
 new_img = filter_img(image)
 gray = cv2.cvtColor(new_img, cv2.COLOR_BGR2GRAY)
@@ -41,5 +41,5 @@ mask = cv2.dilate(mask, None, iterations=2)
 
 #contours,hierarchy = cv2.findContours(mask.copy(), 1, cv2.CHAIN_APPROX_NONE)[-2:]
 
-cv2.imwrite("new.jpg", new_img)
+cv2.imwrite("new.bmp", mask)
 
