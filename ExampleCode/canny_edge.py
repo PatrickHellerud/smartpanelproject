@@ -1,3 +1,7 @@
+# koden under er fra teknologiprosjekt roboten vi brukte.
+# jeg her fjernet mesteparten som har med roboten å gjøre,
+# så det skal bare være for image detection.
+
 import io
 import cv2
 import numpy as np
